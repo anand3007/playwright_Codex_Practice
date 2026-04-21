@@ -1,0 +1,156 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F7FF"/>
+      <stop offset="1" stop-color="#F8FBF5"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F7FAFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F27420F"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12V0Z" fill="#4C5E78"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #16263C; }
+      .subtitle { font: 400 17px Arial, sans-serif; fill: #5D6B80; }
+      .section { font: 700 18px Arial, sans-serif; fill: #28415C; }
+      .nodeTitle { font: 700 17px Arial, sans-serif; fill: #16304A; }
+      .nodeText { font: 400 14px Arial, sans-serif; fill: #516173; }
+      .small { font: 400 13px Arial, sans-serif; fill: #516173; }
+      .pill { font: 700 13px Arial, sans-serif; fill: #0D4E9B; }
+      .footer { font: 400 13px Arial, sans-serif; fill: #6D7B8E; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+
+  <text x="70" y="70" class="title">HCLTech Homepage QA Automation Architecture</text>
+  <text x="70" y="102" class="subtitle">Playwright-based functional, accessibility, BDD, reporting, and CI/CD delivery model</text>
+
+  <rect x="60" y="140" width="1480" height="900" rx="28" fill="#FFFFFFB8" stroke="#D9E5F3"/>
+
+  <rect x="90" y="180" width="300" height="160" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="120" y="220" class="section">Source And Control</text>
+  <rect x="120" y="242" width="240" height="68" rx="18" fill="#EFF5FF" stroke="#B6CAE6"/>
+  <text x="145" y="270" class="nodeTitle">GitHub Repository</text>
+  <text x="145" y="292" class="nodeText">playwright_Codex_Practice</text>
+  <rect x="120" y="322" width="110" height="28" rx="14" fill="#E7F1FF"/>
+  <text x="145" y="341" class="pill">main branch</text>
+  <rect x="240" y="322" width="120" height="28" rx="14" fill="#EAF7EE"/>
+  <text x="261" y="341" class="pill" fill="#1B7B46">pull requests</text>
+
+  <rect x="430" y="180" width="500" height="360" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="460" y="220" class="section">Local Playwright Project</text>
+
+  <rect x="465" y="245" width="430" height="70" rx="18" fill="#EEF4FF" stroke="#B8CAE6"/>
+  <text x="490" y="273" class="nodeTitle">Configuration Layer</text>
+  <text x="490" y="296" class="nodeText">playwright.config.js, package.json, npm scripts</text>
+
+  <rect x="465" y="332" width="135" height="160" rx="20" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="490" y="360" class="nodeTitle">Functional</text>
+  <text x="490" y="384" class="nodeText">Homepage shell</text>
+  <text x="490" y="405" class="nodeText">Content flows</text>
+  <text x="490" y="426" class="nodeText">Footer coverage</text>
+  <text x="490" y="458" class="small">tests/functional/*</text>
+
+  <rect x="615" y="332" width="135" height="160" rx="20" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="636" y="360" class="nodeTitle">Accessibility</text>
+  <text x="636" y="384" class="nodeText">Keyboard</text>
+  <text x="636" y="405" class="nodeText">Structure</text>
+  <text x="636" y="426" class="nodeText">Axe checks</text>
+  <text x="636" y="458" class="small">tests/accessibility/*</text>
+
+  <rect x="765" y="332" width="130" height="160" rx="20" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="796" y="360" class="nodeTitle">BDD</text>
+  <text x="796" y="384" class="nodeText">Feature model</text>
+  <text x="796" y="405" class="nodeText">Spec mapping</text>
+  <text x="796" y="426" class="nodeText">Business flows</text>
+  <text x="796" y="458" class="small">bdd/ and tests/bdd/*</text>
+
+  <rect x="465" y="505" width="430" height="20" rx="10" fill="#E8F0FB"/>
+
+  <rect x="970" y="180" width="250" height="360" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="1000" y="220" class="section">Support Modules</text>
+  <rect x="1000" y="250" width="190" height="70" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1025" y="278" class="nodeTitle">Functional Helpers</text>
+  <text x="1025" y="301" class="nodeText">hcltech-functional.js</text>
+  <rect x="1000" y="335" width="190" height="70" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1025" y="363" class="nodeTitle">Accessibility Helpers</text>
+  <text x="1025" y="386" class="nodeText">accessibility.js</text>
+  <rect x="1000" y="420" width="190" height="70" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1025" y="448" class="nodeTitle">BDD Helpers</text>
+  <text x="1025" y="471" class="nodeText">hcltech-homepage.js</text>
+
+  <rect x="1250" y="180" width="250" height="360" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="1280" y="220" class="section">Execution Layer</text>
+  <rect x="1280" y="250" width="190" height="80" rx="16" fill="#EEF4FF" stroke="#B8CAE6"/>
+  <text x="1310" y="281" class="nodeTitle">Playwright Runner</text>
+  <text x="1310" y="305" class="nodeText">orchestrates tests</text>
+
+  <rect x="1280" y="350" width="190" height="44" rx="12" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1342" y="378" class="nodeTitle">Firefox</text>
+  <rect x="1280" y="405" width="190" height="44" rx="12" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1334" y="433" class="nodeTitle">Chromium</text>
+  <rect x="1280" y="460" width="190" height="44" rx="12" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1350" y="488" class="nodeTitle">WebKit</text>
+
+  <rect x="90" y="610" width="430" height="260" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="120" y="650" class="section">Target Application</text>
+  <rect x="120" y="680" width="370" height="120" rx="22" fill="#F4F9F2" stroke="#BFD8C4"/>
+  <text x="148" y="722" class="nodeTitle">HCLTech Website</text>
+  <text x="148" y="748" class="nodeText">https://www.hcltech.com</text>
+  <text x="148" y="776" class="nodeText">Homepage navigation, content, footer,</text>
+  <text x="148" y="798" class="nodeText">search, language, AI widget, accessibility</text>
+
+  <rect x="560" y="610" width="460" height="260" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="590" y="650" class="section">Outputs And Reporting</text>
+  <rect x="590" y="680" width="180" height="76" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="616" y="710" class="nodeTitle">Playwright Report</text>
+  <text x="616" y="733" class="nodeText">Generated HTML output</text>
+  <rect x="790" y="680" width="200" height="76" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="816" y="710" class="nodeTitle">test-results</text>
+  <text x="816" y="733" class="nodeText">Traces, logs, screenshots</text>
+  <rect x="590" y="775" width="400" height="70" rx="16" fill="#EEF8FF" stroke="#B8CAE6"/>
+  <text x="617" y="804" class="nodeTitle">Custom QA Reports</text>
+  <text x="617" y="827" class="nodeText">Functional report, accessibility report, combined dashboard</text>
+
+  <rect x="1060" y="610" width="440" height="320" rx="24" fill="url(#panel)" stroke="#C9D8EA" filter="url(#shadow)"/>
+  <text x="1090" y="650" class="section">CI/CD Pipeline</text>
+  <rect x="1090" y="680" width="380" height="58" rx="16" fill="#EEF4FF" stroke="#B8CAE6"/>
+  <text x="1118" y="713" class="nodeTitle">GitHub Actions Workflow</text>
+  <text x="1295" y="713" class="nodeText">playwright-ci-cd.yml</text>
+  <rect x="1090" y="754" width="380" height="42" rx="12" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1118" y="781" class="nodeText">1. npm ci</text>
+  <text x="1228" y="781" class="nodeText">2. Install Firefox</text>
+  <text x="1368" y="781" class="nodeText">3. Run suites</text>
+  <rect x="1090" y="810" width="180" height="70" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1116" y="839" class="nodeTitle">Artifact Upload</text>
+  <text x="1116" y="862" class="nodeText">Playwright outputs</text>
+  <rect x="1290" y="810" width="180" height="70" rx="16" fill="#F8FBFF" stroke="#C9D8EA"/>
+  <text x="1316" y="839" class="nodeTitle">GitHub Pages</text>
+  <text x="1316" y="862" class="nodeText">Published dashboard</text>
+
+  <path d="M390 260H430" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M930 360H970" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1220 360H1250" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1375 504V555H305V610" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M305 870H305V940H1280V930" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M790 540V610" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1220 738V754" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1280 880V930" stroke="#4C5E78" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <path d="M532 315V332" stroke="#9AA9BC" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M682 315V332" stroke="#9AA9BC" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M830 315V332" stroke="#9AA9BC" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <path d="M600 412H615" stroke="#9AA9BC" stroke-width="2"/>
+  <path d="M750 412H765" stroke="#9AA9BC" stroke-width="2"/>
+
+  <text x="705" y="588" class="small">Executed by Playwright against the live target site</text>
+  <text x="1130" y="962" class="small">Pages bundle is assembled by scripts/build-pages-report.sh</text>
+  <text x="90" y="1070" class="footer">Generated architecture asset for the HCLTech homepage Playwright QA project</text>
+</svg>
