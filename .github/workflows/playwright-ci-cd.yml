@@ -1,0 +1,110 @@
+name: Playwright QA Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: playwright-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa-suite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps firefox
+
+      - name: Run Firefox QA suites
+        id: qa
+        shell: bash
+        run: |
+          functional_status=0
+          accessibility_status=0
+          bdd_status=0
+
+          PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report/functional npm run test:functional || functional_status=$?
+          PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report/accessibility npm run test:accessibility:firefox || accessibility_status=$?
+          PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report/bdd npm run test:bdd || bdd_status=$?
+
+          overall_status=0
+          if [ "$functional_status" -ne 0 ] || [ "$accessibility_status" -ne 0 ] || [ "$bdd_status" -ne 0 ]; then
+            overall_status=1
+          fi
+
+          {
+            echo "functional_status=$functional_status"
+            echo "accessibility_status=$accessibility_status"
+            echo "bdd_status=$bdd_status"
+            echo "overall_status=$overall_status"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Build GitHub Pages bundle
+        if: always()
+        env:
+          FUNCTIONAL_STATUS: ${{ steps.qa.outputs.functional_status }}
+          ACCESSIBILITY_STATUS: ${{ steps.qa.outputs.accessibility_status }}
+          BDD_STATUS: ${{ steps.qa.outputs.bdd_status }}
+          GITHUB_PAGES_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: bash scripts/build-pages-report.sh site
+
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts
+          path: |
+            playwright-report
+            test-results
+            reports
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload GitHub Pages artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Fail workflow when any suite fails
+        if: always()
+        shell: bash
+        run: exit "${{ steps.qa.outputs.overall_status }}"
+
+  deploy-pages:
+    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: qa-suite
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
