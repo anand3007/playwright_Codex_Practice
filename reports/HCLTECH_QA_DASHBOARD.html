@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCLTech Combined QA Dashboard</title>
+  <style>
+    :root {
+      --page: #f5f6f2;
+      --panel: #ffffff;
+      --panel-soft: #eef4ee;
+      --text: #1b2e28;
+      --muted: #5c6e66;
+      --border: #dde4da;
+      --good: #1e7b52;
+      --bad: #b03a2e;
+      --warn: #d5a31b;
+      --note: #7a4b00;
+      --shadow: 0 18px 40px rgba(27, 46, 40, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef2ec 0%, var(--page) 40%, #fcfcfb 100%);
+    }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    .hero, .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 36px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+    }
+
+    .subhead {
+      margin-top: 14px;
+      max-width: 860px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: #f8fbf8;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .summary { grid-column: span 4; background: var(--panel-soft); }
+    .graphic { grid-column: span 8; padding: 10px; overflow: hidden; }
+    .graphic img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .left, .right { grid-column: span 6; }
+    .wide { grid-column: span 12; }
+
+    .stats {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(27, 46, 40, 0.08);
+    }
+
+    .stat:last-child { border-bottom: 0; padding-bottom: 0; }
+    .stat-label { color: var(--muted); }
+    .stat-value { font-size: 1.75rem; font-weight: 700; }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .issue {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fcfdfc;
+      padding: 16px;
+    }
+
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .critical { background: #f3e3e0; color: var(--bad); }
+    .healthy { background: #e4f1e8; color: var(--good); }
+    .watch { background: #f7edd1; color: var(--note); }
+    .info { background: #e8eef9; color: #3f5985; }
+
+    .issue p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .issue ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    th {
+      background: #f7faf7;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .link-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: #fafcfb;
+    }
+
+    .link-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .link-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    a { color: #0f5f8f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 980px) {
+      .summary, .graphic, .left, .right, .wide {
+        grid-column: span 12;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>HCLTech Combined QA Dashboard</h1>
+      <p class="subhead">
+        This dashboard merges the latest accessibility and functional Playwright outcomes for the
+        HCLTech homepage. It provides a single review surface for run totals, confirmed accessibility
+        defects, functional stability, and the next recommended QA actions.
+      </p>
+      <div class="meta">
+        <span class="pill">Accessibility: 27 tests, 8 passed, 19 failed</span>
+        <span class="pill">Functional: 47 tests, 21 passed, 25 failed, 1 skipped</span>
+        <span class="pill">Combined total: 74 tests</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card summary">
+        <h2>Portfolio Summary</h2>
+        <div class="stats">
+          <div class="stat"><span class="stat-label">Total tests</span><span class="stat-value">74</span></div>
+          <div class="stat"><span class="stat-label">Passed</span><span class="stat-value" style="color: var(--good);">29</span></div>
+          <div class="stat"><span class="stat-label">Failed</span><span class="stat-value" style="color: var(--bad);">44</span></div>
+          <div class="stat"><span class="stat-label">Skipped</span><span class="stat-value" style="color: var(--warn);">1</span></div>
+          <div class="stat"><span class="stat-label">Confirmed defects</span><span class="stat-value">4</span></div>
+        </div>
+      </article>
+
+      <article class="card graphic">
+        <img src="./HCLTECH_QA_DASHBOARD_SUMMARY.svg" alt="Combined HCLTech QA dashboard summary" />
+      </article>
+
+      <article class="card left">
+        <h2>Accessibility View</h2>
+        <div class="list">
+          <section class="issue">
+            <div class="topline">
+              <span class="badge critical">Confirmed</span>
+            </div>
+            <h3>Accessibility has the clearest product-level signal right now</h3>
+            <p>
+              The accessibility suite produced four confirmed defects with repeatable evidence across
+              multiple engines, especially around discernible names, touch target sizing, and skip-link focus.
+            </p>
+            <ul>
+              <li>Unlabeled testimonial media links</li>
+              <li>Desktop nav target-size violations</li>
+              <li>Mobile footer overlap on `Global Presence`</li>
+              <li>Skip link not reliably landing in main content</li>
+            </ul>
+          </section>
+
+          <section class="issue">
+            <div class="topline">
+              <span class="badge watch">Watch</span>
+            </div>
+            <h3>Some accessibility failures were test-scenario mismatches</h3>
+            <p>
+              The desktop menu expectation and the AI `Clear` assertion should be refined before using
+              them as product defects in future triage runs.
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article class="card right">
+        <h2>Functional View</h2>
+        <div class="list">
+          <section class="issue">
+            <div class="topline">
+              <span class="badge healthy">Healthy signal</span>
+            </div>
+            <h3>Core routing and content journeys are partially validated</h3>
+            <p>
+              A meaningful set of functional checks already passed, including representative nav links,
+              highlights, service CTAs, AI visibility, careers, newsletter, case studies, and analyst reports.
+            </p>
+          </section>
+
+          <section class="issue">
+            <div class="topline">
+              <span class="badge info">Needs hardening</span>
+            </div>
+            <h3>Most functional failures still look like automation stability issues</h3>
+            <p>
+              Footer checks failed as a block in `beforeEach`, while some shell and content tests matched
+              hidden duplicate text. That means the functional suite needs one locator/readiness cleanup pass
+              before its failures should be treated as confirmed site defects.
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <h2>Decision Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Current confidence</th>
+              <th>Main evidence</th>
+              <th>Recommended next action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Accessibility defects</td>
+              <td>High</td>
+              <td>Cross-browser Axe findings plus targeted keyboard failures</td>
+              <td>File and track the four confirmed defects immediately</td>
+            </tr>
+            <tr>
+              <td>Functional footer failures</td>
+              <td>Low to medium</td>
+              <td>Footer tests timed out together during setup</td>
+              <td>Fix footer readiness/scroll behavior first, then rerun</td>
+            </tr>
+            <tr>
+              <td>Functional shell/search/language failures</td>
+              <td>Low to medium</td>
+              <td>Late timeouts, page-context closed, hidden-element matches</td>
+              <td>Tighten locators and add narrower visibility waits</td>
+            </tr>
+            <tr>
+              <td>Core homepage content and routing</td>
+              <td>Medium to high</td>
+              <td>21 functional passes across key CTA and content flows</td>
+              <td>Use as the current baseline while stabilizing the rest of the suite</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card left">
+        <h2>Recommended Sequence</h2>
+        <div class="list">
+          <section class="issue">
+            <div class="topline">
+              <span class="badge critical">1</span>
+            </div>
+            <h3>Act on accessibility first</h3>
+            <p>
+              The accessibility report has the strongest product-defect signal and is ready for direct
+              engineering/design triage.
+            </p>
+          </section>
+          <section class="issue">
+            <div class="topline">
+              <span class="badge info">2</span>
+            </div>
+            <h3>Stabilize functional helpers</h3>
+            <p>
+              Fix footer and shell locators, reduce hidden-text matches, and rerun Firefox before opening
+              a broad set of functional bugs.
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article class="card right">
+        <h2>Report Links</h2>
+        <div class="links">
+          <div class="link-card">
+            <strong><a href="./HCLTECH_ACCESSIBILITY_REPORT.html">Accessibility HTML Report</a></strong>
+            <p>Shareable report for accessibility run summary and confirmed issues.</p>
+          </div>
+          <div class="link-card">
+            <strong><a href="./HCLTECH_FUNCTIONAL_REPORT.html">Functional HTML Report</a></strong>
+            <p>Shareable report for the Firefox functional run and failure clusters.</p>
+          </div>
+          <div class="link-card">
+            <strong><a href="../HCLTECH_ACCESSIBILITY_DEFECT_REPORT.md">Accessibility Defect Report</a></strong>
+            <p>Detailed markdown source of truth for confirmed accessibility defects and triage notes.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p class="footer">
+      This combined dashboard is best used as the top-level QA view. Accessibility currently contains
+      the strongest confirmed product risks, while functional automation needs one stabilization pass
+      before most of its failures should be promoted into defects.
+    </p>
+  </main>
+</body>
+</html>

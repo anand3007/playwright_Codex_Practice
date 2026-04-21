@@ -1,0 +1,29 @@
+{
+  "name": "playwright-codex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "test:bdd": "playwright test tests/bdd --project=firefox",
+    "test:bdd:all": "playwright test tests/bdd",
+    "test:functional": "playwright test tests/functional --project=firefox",
+    "test:functional:all": "playwright test tests/functional",
+    "test:functional:headed": "playwright test tests/functional --project=firefox --headed",
+    "test:accessibility": "playwright test tests/accessibility",
+    "test:accessibility:headed": "playwright test tests/accessibility --headed",
+    "test:accessibility:firefox": "playwright test tests/accessibility --project=firefox",
+    "test:accessibility:chromium": "playwright test tests/accessibility --project=chromium",
+    "test:accessibility:webkit": "playwright test tests/accessibility --project=webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.2",
+    "@playwright/test": "^1.59.1"
+  }
+}

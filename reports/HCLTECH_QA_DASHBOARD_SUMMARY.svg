@@ -1,0 +1,122 @@
+<svg width="1440" height="980" viewBox="0 0 1440 980" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">HCLTech Combined QA Dashboard Summary</title>
+  <desc id="desc">Combined QA dashboard for HCLTech homepage showing accessibility and functional test totals, pass fail split, and key issue concentrations.</desc>
+  <rect width="1440" height="980" fill="#F5F6F2"/>
+  <rect x="34" y="34" width="1372" height="912" rx="30" fill="#FFFFFF" stroke="#DDE4DA"/>
+
+  <text x="88" y="108" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">
+    HCLTech Combined QA Dashboard
+  </text>
+  <text x="88" y="146" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Accessibility and functional quality summary for April 21, 2026
+  </text>
+
+  <rect x="88" y="192" width="400" height="186" rx="24" fill="#EEF6EA"/>
+  <text x="118" y="246" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Overall Totals
+  </text>
+  <text x="118" y="288" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="700">
+    74
+  </text>
+  <text x="210" y="288" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    tests executed
+  </text>
+  <text x="118" y="330" fill="#1E7B52" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    29 passed
+  </text>
+  <text x="278" y="330" fill="#B03A2E" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    44 failed
+  </text>
+  <text x="118" y="364" fill="#9B7A00" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    1 skipped
+  </text>
+
+  <rect x="520" y="192" width="400" height="186" rx="24" fill="#FFF4EC"/>
+  <text x="550" y="246" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Confirmed Risk
+  </text>
+  <text x="550" y="288" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="700">
+    4
+  </text>
+  <text x="620" y="288" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    confirmed accessibility defects
+  </text>
+  <text x="550" y="330" fill="#7A4B00" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    functional failures need locator hardening first
+  </text>
+
+  <rect x="952" y="192" width="364" height="186" rx="24" fill="#EEF1FB"/>
+  <text x="982" y="246" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Dominant Failure Areas
+  </text>
+  <text x="982" y="290" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    Functional footer
+  </text>
+  <text x="982" y="322" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Accessibility target size
+  </text>
+  <text x="982" y="354" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Keyboard focus / menu coverage
+  </text>
+
+  <text x="88" y="438" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Combined Pass / Fail Split
+  </text>
+  <circle cx="258" cy="626" r="128" fill="none" stroke="#E3EAE0" stroke-width="34"/>
+  <circle cx="258" cy="626" r="128" fill="none" stroke="#B03A2E" stroke-width="34" stroke-linecap="round"
+    stroke-dasharray="479 804" transform="rotate(-90 258 626)"/>
+  <circle cx="258" cy="626" r="128" fill="none" stroke="#1E7B52" stroke-width="34" stroke-linecap="round"
+    stroke-dasharray="315 804" stroke-dashoffset="-479" transform="rotate(-90 258 626)"/>
+  <circle cx="258" cy="626" r="128" fill="none" stroke="#D5A31B" stroke-width="34" stroke-linecap="round"
+    stroke-dasharray="10 804" stroke-dashoffset="-794" transform="rotate(-90 258 626)"/>
+  <text x="200" y="620" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">
+    59%
+  </text>
+  <text x="214" y="652" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    failed
+  </text>
+  <rect x="112" y="804" width="18" height="18" rx="4" fill="#B03A2E"/>
+  <text x="142" y="819" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Failed: 44</text>
+  <rect x="250" y="804" width="18" height="18" rx="4" fill="#1E7B52"/>
+  <text x="280" y="819" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Passed: 29</text>
+  <rect x="388" y="804" width="18" height="18" rx="4" fill="#D5A31B"/>
+  <text x="418" y="819" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Skipped: 1</text>
+
+  <text x="500" y="438" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Run Comparison
+  </text>
+  <text x="500" y="500" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Accessibility</text>
+  <rect x="660" y="480" width="560" height="30" rx="15" fill="#E8EFE5"/>
+  <rect x="660" y="480" width="166" height="30" rx="15" fill="#1E7B52"/>
+  <rect x="826" y="480" width="393" height="30" rx="15" fill="#B03A2E"/>
+  <text x="1236" y="501" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">8 / 19</text>
+
+  <text x="500" y="560" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Functional</text>
+  <rect x="660" y="540" width="560" height="30" rx="15" fill="#EDE6DB"/>
+  <rect x="660" y="540" width="250" height="30" rx="15" fill="#20744D"/>
+  <rect x="910" y="540" width="298" height="30" rx="15" fill="#B24738"/>
+  <rect x="1208" y="540" width="12" height="30" rx="15" fill="#D0A01D"/>
+  <text x="1236" y="561" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">21 / 25 / 1</text>
+
+  <text x="500" y="648" fill="#1B2E28" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Issue Concentration
+  </text>
+  <text x="500" y="706" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Functional footer readiness / visibility</text>
+  <rect x="820" y="688" width="400" height="26" rx="13" fill="#F2E2DF"/>
+  <rect x="820" y="688" width="290" height="26" rx="13" fill="#B24738"/>
+
+  <text x="500" y="754" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Accessibility target size / overlap</text>
+  <rect x="820" y="736" width="400" height="26" rx="13" fill="#F5E8D6"/>
+  <rect x="820" y="736" width="205" height="26" rx="13" fill="#C06C2C"/>
+
+  <text x="500" y="802" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">Keyboard / skip focus / menu assumptions</text>
+  <rect x="820" y="784" width="400" height="26" rx="13" fill="#E9E4F7"/>
+  <rect x="820" y="784" width="160" height="26" rx="13" fill="#6A5ACD"/>
+
+  <text x="500" y="870" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Recommendation: treat accessibility confirmed defects as active issues now, and stabilize functional
+  </text>
+  <text x="500" y="898" fill="#5C6E66" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    shell/footer locators before converting most functional failures into product bugs.
+  </text>
+</svg>

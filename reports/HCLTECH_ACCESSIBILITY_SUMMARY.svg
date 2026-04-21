@@ -1,0 +1,112 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">HCLTech Accessibility Summary</title>
+  <desc id="desc">Graphical summary of the April 21 2026 HCLTech accessibility test run, showing 27 tests run, 8 passed, 19 failed, and four confirmed defects.</desc>
+  <rect width="1400" height="900" fill="#F4F7F2"/>
+  <rect x="40" y="40" width="1320" height="820" rx="32" fill="#FFFFFF" stroke="#D7E0D2"/>
+
+  <text x="90" y="110" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">
+    HCLTech Accessibility Report
+  </text>
+  <text x="90" y="145" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Test run summary for April 21, 2026
+  </text>
+
+  <rect x="90" y="190" width="360" height="180" rx="24" fill="#EEF6EA"/>
+  <text x="120" y="245" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Test Run Outcome
+  </text>
+  <text x="120" y="286" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">
+    27
+  </text>
+  <text x="215" y="286" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    tests executed
+  </text>
+  <text x="120" y="328" fill="#1E7B52" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    8 passed
+  </text>
+  <text x="250" y="328" fill="#B03A2E" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    19 failed
+  </text>
+
+  <rect x="490" y="190" width="360" height="180" rx="24" fill="#FFF4EC"/>
+  <text x="520" y="245" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Triaged Issues
+  </text>
+  <text x="520" y="286" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">
+    4
+  </text>
+  <text x="590" y="286" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    confirmed defects
+  </text>
+  <text x="520" y="328" fill="#7A4B00" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    3 test-harness notes
+  </text>
+
+  <rect x="890" y="190" width="380" height="180" rx="24" fill="#EEF1FB"/>
+  <text x="920" y="245" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Severity Split
+  </text>
+  <text x="920" y="286" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">
+    3
+  </text>
+  <text x="990" y="286" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    high severity
+  </text>
+  <text x="920" y="328" fill="#7E5A00" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    1 medium severity
+  </text>
+
+  <text x="90" y="430" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Pass / Fail Distribution
+  </text>
+  <circle cx="250" cy="610" r="120" fill="none" stroke="#E1E9DD" stroke-width="34"/>
+  <circle cx="250" cy="610" r="120" fill="none" stroke="#B03A2E" stroke-width="34" stroke-linecap="round"
+    stroke-dasharray="530 754" transform="rotate(-90 250 610)"/>
+  <circle cx="250" cy="610" r="120" fill="none" stroke="#1E7B52" stroke-width="34" stroke-linecap="round"
+    stroke-dasharray="224 754" stroke-dashoffset="-530" transform="rotate(-90 250 610)"/>
+  <text x="212" y="605" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    70%
+  </text>
+  <text x="202" y="640" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    failures
+  </text>
+  <rect x="120" y="760" width="18" height="18" rx="4" fill="#B03A2E"/>
+  <text x="150" y="775" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Failed: 19</text>
+  <rect x="260" y="760" width="18" height="18" rx="4" fill="#1E7B52"/>
+  <text x="290" y="775" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Passed: 8</text>
+
+  <text x="470" y="430" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Confirmed Defects by Severity
+  </text>
+  <text x="470" y="500" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">High</text>
+  <rect x="560" y="480" width="420" height="30" rx="15" fill="#F1E3E0"/>
+  <rect x="560" y="480" width="315" height="30" rx="15" fill="#B03A2E"/>
+  <text x="890" y="501" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">3</text>
+
+  <text x="470" y="560" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Medium</text>
+  <rect x="560" y="540" width="420" height="30" rx="15" fill="#F5ECD4"/>
+  <rect x="560" y="540" width="105" height="30" rx="15" fill="#D8A01C"/>
+  <text x="680" y="561" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">1</text>
+
+  <text x="470" y="650" fill="#163024" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Confirmed Defect Themes
+  </text>
+  <rect x="470" y="690" width="35" height="18" rx="4" fill="#2F7C6B"/>
+  <text x="520" y="705" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Discernible name</text>
+  <rect x="470" y="730" width="240" height="18" rx="9" fill="#2F7C6B"/>
+
+  <rect x="760" y="690" width="35" height="18" rx="4" fill="#C06C2C"/>
+  <text x="810" y="705" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Touch target size / overlap</text>
+  <rect x="760" y="730" width="330" height="18" rx="9" fill="#C06C2C"/>
+
+  <rect x="1120" y="690" width="35" height="18" rx="4" fill="#6A5ACD"/>
+  <text x="1170" y="705" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">Skip link focus</text>
+  <rect x="1120" y="730" width="110" height="18" rx="9" fill="#6A5ACD"/>
+
+  <text x="470" y="815" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Most actionable findings: unlabeled testimonial media links, undersized navigation targets,
+  </text>
+  <text x="470" y="842" fill="#4F6356" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    mobile footer target overlap, and skip-link focus not reliably reaching main content.
+  </text>
+</svg>

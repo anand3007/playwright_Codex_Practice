@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCLTech Functional Report</title>
+  <style>
+    :root {
+      --page: #f6f4ef;
+      --panel: #ffffff;
+      --panel-alt: #eef5ed;
+      --text: #1f2d2a;
+      --muted: #5e6b67;
+      --border: #e2dbcf;
+      --good: #20744d;
+      --bad: #b24738;
+      --warn: #d0a01d;
+      --accent: #c06c2c;
+      --shadow: 0 18px 40px rgba(31, 45, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f3efe7 0%, var(--page) 40%, #fcfbf9 100%);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    .hero, .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 36px;
+    }
+
+    h1, h2, h3 { margin: 0; }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .subhead {
+      margin-top: 14px;
+      max-width: 850px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1.04rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: #faf8f3;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .summary { grid-column: span 4; background: var(--panel-alt); }
+    .graphic { grid-column: span 8; padding: 10px; overflow: hidden; }
+    .graphic img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .breakdown, .notes { grid-column: span 6; }
+    .evidence { grid-column: span 12; }
+
+    .stats {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(31, 45, 42, 0.08);
+      padding-bottom: 12px;
+    }
+
+    .stat:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .stat-label { color: var(--muted); }
+    .stat-value { font-size: 1.7rem; font-weight: 700; }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .issue {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: #fdfcf9;
+    }
+
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .fail { background: #f3e3e0; color: var(--bad); }
+    .note { background: #f7edd1; color: #7a4b00; }
+    .pass { background: #e4f1e8; color: var(--good); }
+
+    .issue p, .section p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .issue ul {
+      margin: 10px 0 0 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      padding: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    th {
+      background: #faf8f3;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    a { color: #0f5f8f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .summary, .graphic, .breakdown, .notes, .evidence {
+        grid-column: span 12;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>HCLTech Functional HTML Report</h1>
+      <p class="subhead">
+        This report summarizes the Playwright functional run for the HCLTech homepage. It captures
+        the run outcome, stable passing areas, the major failure clusters, and the most likely causes
+        based on the completed Firefox execution.
+      </p>
+      <div class="meta">
+        <span class="pill">Command: <strong>`npm run test:functional`</strong></span>
+        <span class="pill">Browser: Firefox</span>
+        <span class="pill">Result: 21 passed / 25 failed / 1 skipped</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card summary">
+        <h2>Run Snapshot</h2>
+        <div class="stats">
+          <div class="stat"><span class="stat-label">Tests executed</span><span class="stat-value">47</span></div>
+          <div class="stat"><span class="stat-label">Passed</span><span class="stat-value" style="color: var(--good);">21</span></div>
+          <div class="stat"><span class="stat-label">Failed</span><span class="stat-value" style="color: var(--bad);">25</span></div>
+          <div class="stat"><span class="stat-label">Skipped</span><span class="stat-value" style="color: var(--warn);">1</span></div>
+          <div class="stat"><span class="stat-label">Duration</span><span class="stat-value">5.2m</span></div>
+        </div>
+      </article>
+
+      <article class="card graphic">
+        <img src="./HCLTECH_FUNCTIONAL_SUMMARY.svg" alt="Graphical summary of HCLTech functional test results" />
+      </article>
+
+      <article class="card breakdown">
+        <h2>What Passed</h2>
+        <div class="list">
+          <section class="issue">
+            <div class="topline">
+              <span class="badge pass">Stable</span>
+            </div>
+            <h3>Content and routing checks were mostly healthy</h3>
+            <p>
+              Representative navigation links, AI visibility, highlights, services, analyst reports,
+              careers, newsletter, and case studies all passed in the live run.
+            </p>
+            <ul>
+              <li>`Cloud`, `Leadership`, `Case Studies`, and `Events and Webinars` routing passed</li>
+              <li>AI widget visibility and submit-state checks passed</li>
+              <li>Highlights and service CTA routing passed</li>
+            </ul>
+          </section>
+
+          <section class="issue">
+            <div class="topline">
+              <span class="badge pass">Stable</span>
+            </div>
+            <h3>Several shell checks were already solid</h3>
+            <p>
+              Skip-link reachability, logo destination, contact routing, and the desktop responsive
+              shell all passed, which gives us a good baseline to refine from.
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article class="card notes">
+        <h2>Failure Themes</h2>
+        <div class="list">
+          <section class="issue">
+            <div class="topline">
+              <span class="badge fail">Cluster</span>
+            </div>
+            <h3>Footer suite failed as a block</h3>
+            <p>
+              Most footer tests failed in `beforeEach` while waiting for footer readiness. That
+              points more strongly to footer helper assumptions or page-readiness timing than to many
+              independent broken links.
+            </p>
+          </section>
+
+          <section class="issue">
+            <div class="topline">
+              <span class="badge fail">Cluster</span>
+            </div>
+            <h3>Some selectors matched hidden duplicate text</h3>
+            <p>
+              The testimonial carousel and breadcrumb tests resolved to hidden elements instead of
+              visible controls or labels, which is a classic sign that the locator strategy needs tightening.
+            </p>
+          </section>
+
+          <section class="issue">
+            <div class="topline">
+              <span class="badge note">Note</span>
+            </div>
+            <h3>Responsive and utility checks need more resilient timing</h3>
+            <p>
+              The tablet/mobile shell, language switch, search, and hero tests timed out late and
+              often ended with `Target page, context or browser has been closed`, which usually means
+              the page was still busy or the expectations were too broad for the live DOM.
+            </p>
+          </section>
+        </div>
+      </article>
+
+      <article class="card evidence">
+        <h2>Evidence Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>Representative tests</th>
+              <th>Observed outcome</th>
+              <th>Likely interpretation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Content flows</td>
+              <td>`FT-011` to `FT-017`, `FT-019` to `FT-021`</td>
+              <td>Mostly passed</td>
+              <td>Core business journeys and homepage CTA routing are in relatively good shape</td>
+            </tr>
+            <tr>
+              <td>Carousel / breadcrumb</td>
+              <td>`FT-018`, `FT-022`</td>
+              <td>Failed on hidden element matches</td>
+              <td>Locators are too broad and need visible-element targeting</td>
+            </tr>
+            <tr>
+              <td>Footer suite</td>
+              <td>`FT-023` to `FT-029`</td>
+              <td>Failed in `beforeEach` waiting for footer readiness</td>
+              <td>Strong signal of helper or readiness issues, not 16 separate product defects yet</td>
+            </tr>
+            <tr>
+              <td>Shell / responsive</td>
+              <td>`FT-001`, `FT-005`, `FT-007`, `FT-008`, `FT-009`, `FT-010` tablet/mobile</td>
+              <td>Timed out or closed late</td>
+              <td>Needs tighter page-state waits and narrower locator scopes</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Artifacts</h2>
+      <p>
+        Use the Playwright `test-results` directory for raw error contexts from this run. The
+        functional suite files live under <a href="../tests/functional">`../tests/functional`</a>.
+      </p>
+    </section>
+
+    <p class="footer">
+      This HTML report is intended as a triage summary for the current functional run. The next most
+      useful step is to harden the footer and shell helper logic, then rerun the suite before turning
+      the remaining failures into a formal defect list.
+    </p>
+  </main>
+</body>
+</html>
